@@ -43,21 +43,19 @@
 					<p>Registration Form:</p>
 
 					<form action="register.jsp" method="post">
-					LearnerDAO pconnect = LearnerDAO();
-					
 						<p>
 							<br> First Name (required) <br> <input type="text"
-								name="first-name" value="" size="40" aria-required="true"
+								name="firstname" value="" size="40" aria-required="true"
 								aria-invalid="false">
 						</p>
 						<p>
 							<br> Other Name <br> <input type="text"
-								name="other-name" value="" size="40" aria-required="false"
+								name="othername" value="" size="40" aria-required="false"
 								aria-invalid="false">
 						</p>
 						<p>
 							<br> Last Name (required) <br> <input type="text"
-								name="last-name" value="" size="40" aria-required="true"
+								name="lastname" value="" size="40" aria-required="true"
 								aria-invalid="false">
 						</p>
 												<p>
@@ -93,7 +91,7 @@
 							</textarea>
 						</p>
 						<p>
-							<br>Existing Training <select>
+							<br>Existing Training <select name ="existing-training"> 
 								<option value="Select">Select</option>
 								<option value="N">N</option>
 								<option value="Y">Y</option>
@@ -108,7 +106,20 @@
 						<br><input type="Submit" value="Submit">
 						<br><br>
 					</form>
-
+				<%LearnerDAO pconnect = new LearnerDAO();
+				String fName = request.getParameter("firstname");
+				String lName = request.getParameter("lastname");
+				String oName = request.getParameter("othername");
+				String lEmail = request.getParameter("learner-email");
+				String lTraining =request.getParameter("learner-training-interests");
+				String interest = request.getParameter("specific-interest");
+				String courseTitle = request.getParameter("course-choice-title");
+				String duration = request.getParameter("course-choice-duration");
+				String description = request.getParameter("description-of-interest");
+				String eTraining = request.getParameter("existing-trainign");
+				%>
+					
+					
 
 
 

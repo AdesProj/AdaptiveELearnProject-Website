@@ -18,6 +18,7 @@ public class BeanLearner implements Serializable {
 	private String existingTraining;
 	private String currentJob;
 	private String emailAddress;
+	
 	public  BeanLearner () {}
 	
 	public  BeanLearner (int lId, String lFName, String lOName, String lLName, String lTraining, String spcInsterest, 
