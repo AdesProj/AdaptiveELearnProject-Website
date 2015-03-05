@@ -44,9 +44,9 @@
 
 					<form action="add-learner" method="post">
 						<p>
-							<br> First Name (required) <br> <input type="text"
+							<br> First Name <br> <input type="text"
 								name="firstname" value="" size="40" aria-required="true"
-								aria-invalid="false">
+								aria-invalid="false" required>
 						</p>
 						<p>
 							<br> Other Name <br> <input type="text"
@@ -54,58 +54,74 @@
 								aria-invalid="false">
 						</p>
 						<p>
-							<br> Last Name (required) <br> <input type="text"
+							<br> Last Name <br> <input type="text"
 								name="lastname" value="" size="40" aria-required="true"
-								aria-invalid="false">
+								aria-invalid="false" required>
 						</p>
-												<p>
-							<br> E-mail Address (required) <br> <input type="email"
+							<p>
+							<br> E-mail Address  <br> <input type="email"
 								name="learner-email" value="" size="40" aria-required="true"
-								aria-invalid="false">
+								aria-invalid="false" required>
 						</p>
 						<p>
-							<br> Password (required) <br> <input type="password"
+							<br> Password  <br> <input type="password"
 								name="learner-pass" value="" size="40" aria-required="true"
-								aria-invalid="false">
+								aria-invalid="false" required>
 						</p>
 						<p>
-							<br> Learner Training Interests (required)<br> <input
+							<br> Learner Training Interests <br> <input
 								type="text" name="learner-training-interests" value="" size="40"
-								aria-required="true" aria-invalid="false">
+								aria-required="true" aria-invalid="false" required>
 						</p>
 						<p>
-							<br> Specific Interest (required) <br> <input
+							<br> Specific Interest <br> <input
 								type="text" name="specific-interest" value="" size="40"
-								aria-required="true" aria-invalid="false">
+								aria-required="true" aria-invalid="false" required>
 						</p>
 
 						<p>
-							<br> Course Choice Title <br> <input type="text"
-								name="course-choice-title" value="" size="40">
+							<br> Course Choice Title  <select name="course-choice-title" required>
+							<option value =" ">Select</option>
+							
+							<%
+								CourseDAO pconnect = new CourseDAO();
+								ArrayList<BeanCourse> cat = pconnect.viewCourses();
+								for (BeanCourse G : cat){%>
+									<option value="<%=G.getCourse_title()%>"><%=G.getCourse_title()%></option>
+									<%} %>
+							</select>
 						</p>
 						
 						<p>
-							<br> Course Choice Duration <br> <input type="text"
-								name="course-choice-duration" value="" size="40">
+							<br> Course Choice Duration <select name="course-choice-duration" required>
+							<option value =" ">Select</option>
+							<option value ="1">1 Year</option>
+							<option value ="2">2 Years</option>
+							<option value ="3">3 Years</option>
+							<option value ="4">4 Years</option>
+							<option value ="5">5 Years</option>
+							<option value ="6">6 Years</option>
+							<option value ="7">7 Years</option>
+							</select>
 						</p>
 
 						<p>
 							<br>Description Of Interests <br>
 							<textarea name="description-of-interest" value="" size="40"
-								cols="40" rows="10" aria-required="true" aria-invalid="false">
+								cols="40" rows="10" aria-required="true" aria-invalid="false" required>
 							</textarea>
 						</p>
 						<p>
-							<br>Existing Training <select name ="existing-training"> 
-								<option value="Select">Select</option>
-								<option value="N">N</option>
-								<option value="Y">Y</option>
+							<br>Existing Training <select name ="existing-training" required> 
+								<option value=" ">Select</option>
+								<option value="N">No</option>
+								<option value="Y">Yes</option>
 							</select>
 						</p>
 						<p>
 							<br> Current Expected Job <br>
 							<textarea name="current-expected-job" value="" size="40"
-								cols="40" rows="10" aria-required="true" aria-invalid="false">
+								cols="40" rows="10" aria-required="true" aria-invalid="false" required>
 							</textarea>
 						</p>
 						<br><input type="Submit" value="Submit">
