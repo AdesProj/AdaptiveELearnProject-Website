@@ -7,135 +7,97 @@ import java.io.Serializable;
 
 public class BeanProvider implements Serializable {
 	
-	private int learnId;
-	private String l_Firstname;
-	private String l_Othername;
-	private String l_Lastname;
-	private String l_TrainingInterest;
-	private String specificInterest;
-	private String courseTitle;
-	private String descriptionOfInterest;
-	private String existingTraining;
-	private String currentJob;
-	private String emailAddress;
+	private int providerId;
+	private String p_Firstname;
+	private String p_Lastname;
+	private String p_Email;
+	private int courseId;
+	private String p_degree;
+	private String p_office_hours;
+	private String p_course_taught;
+
 	public  BeanProvider () {}
 	
-	public  BeanProvider (int lId, String lFName, String lOName, String lLName, String lTraining, String spcInsterest, 
-			String c_Title, String d_Interest, String existingT, String c_Job, String email) {
-		lId =learnId;
-		lFName = l_Firstname;
-		lOName= l_Othername;
-		lLName=l_Lastname;
-		lTraining=l_TrainingInterest;
-		spcInsterest=specificInterest;
-		c_Title=courseTitle;
-		d_Interest=descriptionOfInterest;
-		existingT=existingTraining;
-		c_Job=currentJob;
-		email=emailAddress;
+	public  BeanProvider (int pId, String pFName, String pOName, String pLName, int cId, String pDegree, 
+			String pOfficeHours, String pCourseTaught) {
+		providerId = pId;
+		p_Firstname = pFName;
+		p_Lastname = pLName;
+		courseId = cId;
+		p_degree = pDegree;
+		p_office_hours = pOfficeHours;
+		p_course_taught = pCourseTaught;
 	}
-	public  BeanProvider ( String lFName, String lOName, String lLName, String lTraining, String spcInsterest, 
-			String c_Title, String d_Interest, String existingT, String c_Job) {
-		lFName = l_Firstname;
-		lOName= l_Othername;
-		lLName=l_Lastname;
-		lTraining=l_TrainingInterest;
-		spcInsterest=specificInterest;
-		c_Title=courseTitle;
-		d_Interest=descriptionOfInterest;
-		existingT=existingTraining;
-		c_Job=currentJob;
+	public  BeanProvider (String pFName, String pOName, String pLName, int cId, String pDegree, 
+			String pOfficeHours, String pCourseTaught) {
+		p_Firstname = pFName;
+		p_Lastname = pLName;
+		courseId = cId;
+		p_degree = pDegree;
+		p_office_hours = pOfficeHours;
+		p_course_taught = pCourseTaught;
 	}
-	 public int getLearnId (){
-	    	return learnId;
+	 public int getProvId (){
+	    	return providerId;
 	    }
-	    public void setLearnerId (int learnId){
-	    	this.learnId = learnId;
+	    public void setLearnerId (int pId){
+	    	this.providerId = pId;
 	    }
-	    public String getL_Firstname(){
-	    	return l_Firstname;
+	    public String getP_Firstname(){
+	    	return p_Firstname;
 	    }
 	    
-	    public void setL_Firstname(String l_Firstname){
-	    	this.l_Firstname =l_Firstname;
+	    public void setP_Firstname(String p_Firstname){
+	    	this.p_Firstname =p_Firstname;
 	    } 
 	    
-	    public String getL_Othername(){
-	    	return l_Othername;
+	    public String getP_Lastname(){
+	    	return p_Lastname;
 	    }
 	    
-	    public void setL_Othername(String l_Othername){
-	    	this.l_Othername =l_Othername;
+	    public void setP_Lastname(String p_Lastname){
+	    	this.p_Lastname =p_Lastname;
 	    }
 	    
-	    public String getL_Lastname(){
-	    	return l_Lastname;
+	    public void setCourseId(int id ){
+	    	this.courseId = id;
 	    }
 	    
-	    public void setL_Lastname(String l_Lastname){
-	    	this.l_Lastname =l_Lastname;
-	    }
-	   
-	    public void setL_TrainingInterest(String l_TrainingInterest){
-	    	this.l_TrainingInterest =l_TrainingInterest;
-	    }
-	    
-	    public String getL_TrainingInterest(){
-	    	return l_TrainingInterest ;
-	    }
-	    
-	    public void setSpecificInterest(String specificInterest ){
-	    	this.specificInterest =specificInterest;
-	    }
-	    
-	    public String getSpecificInterest(){
-	    	return specificInterest;
-	    } 
-	    public String getCourseTitle (){
-	    	return courseTitle;
-	    }
-	    public void setCourseId (String courseTitle){
-	    	this.courseTitle = courseTitle;
-	    }
-	    public void setDescriptionOfInterest(String descriptionOfInterest ){
-	    	this.descriptionOfInterest =descriptionOfInterest;
-	    }
-	    
-	    public String getDescriptionOfInterest(){
-	    	return descriptionOfInterest;
-	    }
-	    public void setExistingTraining(String existingTraining){
-	    	this.existingTraining =existingTraining;
-	    }
-	    
-	    public String getExistingTraining(){
-	    	return existingTraining;
-	    }
-	    public void setCurrentJob(String currentJob ){
-	    	this.currentJob =currentJob;
-	    }
-	    
-	    public String getCurrentJob(){
-	    	return currentJob;
+	    public int getCourseId(int id){
+	    	return courseId;
 	    }
 	    
 	    public void setEmailAddress(String email ){
-	    	this.emailAddress =email;
+	    	this.p_Email =email;
 	    }
 	    
 	    public String getEmailAddress(){
-	    	return emailAddress;
+	    	return p_Email;
 	    }
-		@Override
-		public String toString() {
-			return "BeanLearner [learnId=" + learnId + ", l_Firstname="
-					+ l_Firstname + ", l_Othername=" + l_Othername
-					+ ", l_Lastname=" + l_Lastname + ", l_TrainingInterest="
-					+ l_TrainingInterest + ", specificInterest="
-					+ specificInterest + ", courseTitle=" + courseTitle
-					+ ", descriptionOfInterest=" + descriptionOfInterest
-					+ ", existingTraining=" + existingTraining
-					+ ", currentJob=" + currentJob + "]";
-		}
-	   
+	    
+	    public void setP_Degree(String pDegree ){
+	    	this.p_degree =pDegree;
+	    }
+	    
+	    public String getP_Degree(){
+	    	return p_degree;
+	    }
+	    
+	    public void setP_Office_Hours(String pOffHours ){
+	    	this.p_office_hours =pOffHours;
+	    }
+	    
+	    public String getP_Office_Hours(){
+	    	return p_office_hours;
+	    }
+	    
+	    public void setP_Course_Taught(String pCourseTaught ){
+	    	this.p_course_taught =pCourseTaught;
+	    }
+	    
+	    public String getP_Course_Taught(){
+	    	return p_course_taught;
+	    }
+	     
+
 }
