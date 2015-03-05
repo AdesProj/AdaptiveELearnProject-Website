@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Register || Adaptive E-Learn Systems</title>
+<title>Home || Adaptive E-Learn Systems</title>
 <link rel="stylesheet" type="text/css" href="design.css" />
 </head>
 <body>
@@ -117,6 +117,10 @@
 				String duration = request.getParameter("course-choice-duration");
 				String description = request.getParameter("description-of-interest");
 				String eTraining = request.getParameter("existing-trainign");
+				String cJob = request.getParameter("current-expected-job" );
+				BeanLearner l =new BeanLearner (fName, oName, lName, lTraining, interest, courseTitle, description,
+						eTraining, cJob, lEmail );
+				pconnect.add(l);
 				%>
 					
 					

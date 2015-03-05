@@ -36,7 +36,7 @@ public class BeanLearner implements Serializable {
 		email=emailAddress;
 	}
 	public  BeanLearner ( String lFName, String lOName, String lLName, String lTraining, String spcInsterest, 
-			String c_Title, String d_Interest, String existingT, String c_Job) {
+			String c_Title, String d_Interest, String existingT, String c_Job, String email) {
 		lFName = l_Firstname;
 		lOName= l_Othername;
 		lLName=l_Lastname;
@@ -46,6 +46,8 @@ public class BeanLearner implements Serializable {
 		d_Interest=descriptionOfInterest;
 		existingT=existingTraining;
 		c_Job=currentJob;
+		email=emailAddress;
+		
 	}
 	 public int getLearnId (){
 	    	return learnId;
@@ -127,6 +129,7 @@ public class BeanLearner implements Serializable {
 	    public String getEmailAddress(){
 	    	return emailAddress;
 	    }
+
 		@Override
 		public String toString() {
 			return "BeanLearner [learnId=" + learnId + ", l_Firstname="
@@ -136,7 +139,8 @@ public class BeanLearner implements Serializable {
 					+ specificInterest + ", courseTitle=" + courseTitle
 					+ ", descriptionOfInterest=" + descriptionOfInterest
 					+ ", existingTraining=" + existingTraining
-					+ ", currentJob=" + currentJob + "]";
+					+ ", currentJob=" + currentJob + ", emailAddress="
+					+ emailAddress + "]";
 		}
-	   
+		
 }
