@@ -51,7 +51,7 @@
 							<th>Subject Domain</th>
 							<th>Duration</th>
 							<th>Start Date</th>
-							<th>End Date</th>
+							<th>End Datepoo</th>
 							<th>Cost</th>
 							<th>Course Requirements</th>
 							<th>Course Information Id </th>
