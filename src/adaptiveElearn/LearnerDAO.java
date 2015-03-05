@@ -27,20 +27,22 @@ public class LearnerDAO {
 	public void add(BeanLearner c) {
 		try {
 			String queryString = "INSERT INTO learners(learner_first_name, learner_other_names, learner_last_name, "
-					+ " learner_training_interests, specific_interests, course_choice_title, "
-					+ "description_of_interest, existing_training, current_expected_job, learner-email-address) VALUES(?,?,?,?,?,?,?,?,?,?)";
+					+ " learner_training_interests, specific_interests, course_choice_title, course_choice_duration,"
+					+ "description_of_interest, existing_training, current_expected_job, learner_email_address) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 			connection = getConnection();
 			ptmt = connection.prepareStatement(queryString);
 			ptmt.setString(1, c.getL_Firstname());
+			System.out.println(c.getL_Firstname() + " " + c.getL_Lastname());
 			ptmt.setString(2, c.getL_Othername());
 			ptmt.setString(3, c.getL_Lastname());
 			ptmt.setString(4, c.getL_TrainingInterest());
 			ptmt.setString(5, c.getSpecificInterest());
 			ptmt.setString(6, c.getCourseTitle());
-			ptmt.setString(7, c.getDescriptionOfInterest());
-			ptmt.setString(8, c.getExistingTraining());
-			ptmt.setString(9, c.getCurrentJob());
-			ptmt.setString(10, c.getEmailAddress());
+			ptmt.setString(7, c.getCDuration());
+			ptmt.setString(8, c.getDescriptionOfInterest());
+			ptmt.setString(9, c.getExistingTraining());
+			ptmt.setString(10, c.getCurrentJob());
+			ptmt.setString(11, c.getEmailAddress());
 			ptmt.executeUpdate();
 			System.out.println("Data Added Successfully");
 		} catch (SQLException e) {

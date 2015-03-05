@@ -14,6 +14,7 @@ public class BeanLearner implements Serializable {
 	private String l_TrainingInterest;
 	private String specificInterest;
 	private String courseTitle;
+	private String c_duration;
 	private String descriptionOfInterest;
 	private String existingTraining;
 	private String currentJob;
@@ -22,7 +23,7 @@ public class BeanLearner implements Serializable {
 	public  BeanLearner () {}
 	
 	public  BeanLearner (int lId, String lFName, String lOName, String lLName, String lTraining, String spcInsterest, 
-			String c_Title, String d_Interest, String existingT, String c_Job, String email) {
+			String c_Title, String c_dura, String d_Interest, String existingT, String c_Job, String email) {
 		lId =learnId;
 		lFName = l_Firstname;
 		lOName= l_Othername;
@@ -30,23 +31,25 @@ public class BeanLearner implements Serializable {
 		lTraining=l_TrainingInterest;
 		spcInsterest=specificInterest;
 		c_Title=courseTitle;
+		c_dura =c_duration;
 		d_Interest=descriptionOfInterest;
 		existingT=existingTraining;
 		c_Job=currentJob;
 		email=emailAddress;
 	}
 	public  BeanLearner ( String lFName, String lOName, String lLName, String lTraining, String spcInsterest, 
-			String c_Title, String d_Interest, String existingT, String c_Job, String email) {
-		lFName = l_Firstname;
-		lOName= l_Othername;
-		lLName=l_Lastname;
-		lTraining=l_TrainingInterest;
-		spcInsterest=specificInterest;
-		c_Title=courseTitle;
-		d_Interest=descriptionOfInterest;
-		existingT=existingTraining;
-		c_Job=currentJob;
-		email=emailAddress;
+			String c_Title,String c_dura, String d_Interest, String existingT, String c_Job, String email) {
+		l_Firstname = lFName;
+		l_Othername = lOName;
+		l_Lastname =lLName;
+		l_TrainingInterest=lTraining;
+		specificInterest =spcInsterest;
+		courseTitle = c_Title;
+		c_duration =c_dura ;
+		descriptionOfInterest=d_Interest;
+		existingTraining = existingT;
+		currentJob = c_Job;
+		emailAddress = email;
 		
 	}
 	 public int getLearnId (){
@@ -100,6 +103,13 @@ public class BeanLearner implements Serializable {
 	    public void setCourseId (String courseTitle){
 	    	this.courseTitle = courseTitle;
 	    }
+	    public String getCDuration(){
+	    	return c_duration;
+	    }
+	    
+	    public void setC_duration(String c_duration){
+	    	this.c_duration =c_duration;
+	    }
 	    public void setDescriptionOfInterest(String descriptionOfInterest ){
 	    	this.descriptionOfInterest =descriptionOfInterest;
 	    }
@@ -137,10 +147,11 @@ public class BeanLearner implements Serializable {
 					+ ", l_Lastname=" + l_Lastname + ", l_TrainingInterest="
 					+ l_TrainingInterest + ", specificInterest="
 					+ specificInterest + ", courseTitle=" + courseTitle
-					+ ", descriptionOfInterest=" + descriptionOfInterest
-					+ ", existingTraining=" + existingTraining
-					+ ", currentJob=" + currentJob + ", emailAddress="
-					+ emailAddress + "]";
+					+ ", c_duration=" + c_duration + ", descriptionOfInterest="
+					+ descriptionOfInterest + ", existingTraining="
+					+ existingTraining + ", currentJob=" + currentJob
+					+ ", emailAddress=" + emailAddress + "]";
 		}
+
 		
 }

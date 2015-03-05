@@ -42,7 +42,7 @@
 					<INPUT TYPE="button" VALUE="Back" onClick="history.go(-1);"> 
 					<p>Registration Form:</p>
 
-					<form action="register.jsp" method="post">
+					<form action="add-learner" method="post">
 						<p>
 							<br> First Name (required) <br> <input type="text"
 								name="firstname" value="" size="40" aria-required="true"
@@ -106,27 +106,7 @@
 						<br><input type="Submit" value="Submit">
 						<br><br>
 					</form>
-				<%LearnerDAO pconnect = new LearnerDAO();
-				String fName = request.getParameter("firstname");
-				String lName = request.getParameter("lastname");
-				String oName = request.getParameter("othername");
-				String lEmail = request.getParameter("learner-email");
-				String lTraining =request.getParameter("learner-training-interests");
-				String interest = request.getParameter("specific-interest");
-				String courseTitle = request.getParameter("course-choice-title");
-				String duration = request.getParameter("course-choice-duration");
-				String description = request.getParameter("description-of-interest");
-				String eTraining = request.getParameter("existing-trainign");
-				String cJob = request.getParameter("current-expected-job" );
-				BeanLearner l =new BeanLearner (fName, oName, lName, lTraining, interest, courseTitle, description,
-						eTraining, cJob, lEmail );
-				pconnect.add(l);
-				%>
-					
-					
-
-
-
+		
 				</div>
 			</div>
 		</div>
