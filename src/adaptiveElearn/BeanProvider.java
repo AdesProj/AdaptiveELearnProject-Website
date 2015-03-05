@@ -98,6 +98,15 @@ public class BeanProvider implements Serializable {
 	    public String getP_Course_Taught(){
 	    	return p_course_taught;
 	    }
+
+		@Override
+		public String toString() {
+			return "BeanProvider [providerId=" + providerId + ", p_Firstname="
+					+ p_Firstname + ", p_Lastname=" + p_Lastname + ", p_Email="
+					+ p_Email + ", courseId=" + courseId + ", p_degree="
+					+ p_degree + ", p_office_hours=" + p_office_hours
+					+ ", p_course_taught=" + p_course_taught + "]";
+		}
 	     
 
 }
