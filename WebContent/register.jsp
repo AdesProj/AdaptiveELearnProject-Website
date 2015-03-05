@@ -43,6 +43,8 @@
 					<p>Registration Form:</p>
 
 					<form action="register.jsp" method="post">
+					LearnerDAO pconnect = LearnerDAO();
+					
 						<p>
 							<br> First Name (required) <br> <input type="text"
 								name="first-name" value="" size="40" aria-required="true"
@@ -83,6 +85,7 @@
 							<br> Course Choice Duration <br> <input type="text"
 								name="course-choice-duration" value="" size="40">
 						</p>
+
 						<p>
 							<br>Description Of Interests <br>
 							<textarea name="description-of-interest" value="" size="40"
