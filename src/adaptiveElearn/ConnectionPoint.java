@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 
 /**
- * @author Adaptive E-Learning __
+ * @author Adaptive E-Learning
  * this is the adaptive E-Learning connection point
  * connection to my database 
  */
