@@ -83,7 +83,6 @@
 							<br> Course Choice Duration <br> <input type="text"
 								name="course-choice-duration" value="" size="40">
 						</p>
-
 						<p>
 							<br>Description Of Interests <br>
 							<textarea name="description-of-interest" value="" size="40"
