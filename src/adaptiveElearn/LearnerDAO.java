@@ -27,8 +27,8 @@ public class LearnerDAO {
 	public void add(BeanLearner c) {
 		try {
 			String queryString = "INSERT INTO learners(learner_first_name, learner_other_names, learner_last_name, "
-					+ " learner_training_interests, specific_interests, course_choice_id, "
-					+ "description_of_interest, existing_training, current_expected_job) VALUES(?,?,?,?,?,?,?,?,?)";
+					+ " learner_training_interests, specific_interests, course_choice_title, "
+					+ "description_of_interest, existing_training, current_expected_job, learner-email-address) VALUES(?,?,?,?,?,?,?,?,?,?)";
 			connection = getConnection();
 			ptmt = connection.prepareStatement(queryString);
 			ptmt.setString(1, c.getL_Firstname());
@@ -40,6 +40,7 @@ public class LearnerDAO {
 			ptmt.setString(7, c.getDescriptionOfInterest());
 			ptmt.setString(8, c.getExistingTraining());
 			ptmt.setString(9, c.getCurrentJob());
+			ptmt.setString(10, c.getEmailAddress());
 			ptmt.executeUpdate();
 			System.out.println("Data Added Successfully");
 		} catch (SQLException e) {
