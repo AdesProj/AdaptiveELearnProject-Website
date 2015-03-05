@@ -64,6 +64,11 @@
 								aria-invalid="false">
 						</p>
 						<p>
+							<br> Password (required) <br> <input type="password"
+								name="learner-pass" value="" size="40" aria-required="true"
+								aria-invalid="false">
+						</p>
+						<p>
 							<br> Learner Training Interests (required)<br> <input
 								type="text" name="learner-training-interests" value="" size="40"
 								aria-required="true" aria-invalid="false">

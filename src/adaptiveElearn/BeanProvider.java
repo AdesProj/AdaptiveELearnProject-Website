@@ -22,31 +22,29 @@ public class BeanProvider implements Serializable {
 	
 	public  BeanProvider (int lId, String lFName, String lOName, String lLName, String lTraining, String spcInsterest, 
 			String c_Title, String d_Interest, String existingT, String c_Job, String email) {
-		learnId =lId ;
-		l_Firstname = lFName ;
-		l_Othername = lOName;
-		l_Lastname =lLName;
-		l_TrainingInterest = lTraining;
-		specificInterest=spcInsterest;
-		courseTitle =c_Title;
-		descriptionOfInterest = d_Interest;
-		existingTraining = existingT;
-		currentJob = c_Job;
-		emailAddress = email;
+		lId =learnId;
+		lFName = l_Firstname;
+		lOName= l_Othername;
+		lLName=l_Lastname;
+		lTraining=l_TrainingInterest;
+		spcInsterest=specificInterest;
+		c_Title=courseTitle;
+		d_Interest=descriptionOfInterest;
+		existingT=existingTraining;
+		c_Job=currentJob;
+		email=emailAddress;
 	}
 	public  BeanProvider ( String lFName, String lOName, String lLName, String lTraining, String spcInsterest, 
-			String c_Title, String d_Interest, String existingT, String c_Job, String email) {
-		
-		l_Firstname = lFName ;
-		l_Othername = lOName;
-		l_Lastname =lLName;
-		l_TrainingInterest = lTraining;
-		specificInterest=spcInsterest;
-		courseTitle =c_Title;
-		descriptionOfInterest = d_Interest;
-		existingTraining = existingT;
-		currentJob = c_Job;
-		emailAddress = email;
+			String c_Title, String d_Interest, String existingT, String c_Job) {
+		lFName = l_Firstname;
+		lOName= l_Othername;
+		lLName=l_Lastname;
+		lTraining=l_TrainingInterest;
+		spcInsterest=specificInterest;
+		c_Title=courseTitle;
+		d_Interest=descriptionOfInterest;
+		existingT=existingTraining;
+		c_Job=currentJob;
 	}
 	 public int getLearnId (){
 	    	return learnId;

@@ -23,13 +23,12 @@ public class LoginDAO {
 	//add user to the database
 	public void addUser(BeanUsers usr) {
 		try {
-			String queryString = "INSERT INTO login(id, email_address login_password, account_type) VALUES(?,?,?,?)";
+			String queryString = "INSERT INTO login(email_address, login_password, account_type) VALUES(?,?,?)";
 			connection = getConnection();
 			ptmt = connection.prepareStatement(queryString);
-			ptmt.setInt(1, usr.getID());
-			ptmt.setString(2, usr.getUsername());
-			ptmt.setString(3, usr.getPassword());
-			ptmt.setString(4, usr.getUserType());
+			ptmt.setString(1, usr.getUsername());
+			ptmt.setString(2, usr.getPassword());
+			ptmt.setString(3, usr.getUserType());
 			ptmt.executeUpdate();
 			System.out.println("Login Data Added Successfully");
 		} catch (SQLException e) {

@@ -38,11 +38,14 @@ public class AddLearner extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		LearnerDAO lconnect = new LearnerDAO();
+		LoginDAO loconnect = new LoginDAO();
 		String fName = request.getParameter("firstname");
 		System.out.println(fName);
+		String lAccType = "learner";
 		String lName = request.getParameter("lastname");
 		String oName = request.getParameter("othername");
 		String lEmail = request.getParameter("learner-email");
+		String lPassword = request.getParameter("learner-pass");
 		String lTraining =request.getParameter("learner-training-interests");
 		String interest = request.getParameter("specific-interest");
 		String courseTitle = request.getParameter("course-choice-title");
@@ -53,6 +56,8 @@ public class AddLearner extends HttpServlet {
 		BeanLearner l =new BeanLearner (fName, lName, oName, lTraining, interest, courseTitle, duration, description,
 				eTraining, cJob, lEmail );
 		lconnect.add(l);
+		BeanUsers u = new BeanUsers (lEmail, lPassword, lAccType);
+		loconnect.addUser(u);
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/learner-account.jsp");
 		requestDispatcher.forward(request, response);
 	}

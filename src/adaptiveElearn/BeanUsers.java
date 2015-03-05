@@ -22,9 +22,10 @@ public class BeanUsers implements Serializable {
 		userType=usrType;
 	}
 	
-	public BeanUsers(String usrName, String pWord) {
+	public BeanUsers(String usrName, String pWord, String usrType) {
 		userName=usrName;
 		password=pWord;
+		userType = usrType;
 		
 	}
 
