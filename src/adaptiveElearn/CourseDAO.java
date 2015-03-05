@@ -25,7 +25,7 @@ public class CourseDAO {
 	public ArrayList<BeanCourse> viewCourses() {
 		ArrayList<BeanCourse> courses = null;
 		try {
-			String queryString = "SELECT * FROM courses";
+			String queryString = "SELECT * FROM courses ORDER BY course_title ASC";
 			connection = getConnection();
 			ptmt = connection.prepareStatement(queryString);
 			rs1 = ptmt.executeQuery();
@@ -107,6 +107,8 @@ public class CourseDAO {
 		}
 		return courses;
 	}
+	
+	
 }
 
 
