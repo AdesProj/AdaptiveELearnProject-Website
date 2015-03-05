@@ -40,7 +40,7 @@ public class BeanProvider implements Serializable {
 	 public int getProvId (){
 	    	return providerId;
 	    }
-	    public void setLearnerId (int pId){
+	    public void setProvId (int pId){
 	    	this.providerId = pId;
 	    }
 	    public String getP_Firstname(){

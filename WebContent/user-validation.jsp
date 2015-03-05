@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ page import="java.util.*,adaptiveElearn.*"%>
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>View Courses || Adaptive E-Learn Systems</title>
+<title>New User? || Adaptive E-Learn Systems</title>
 <link rel="stylesheet" type="text/css" href="design.css" />
 </head>
 <body>
@@ -39,44 +39,32 @@
 		<div id="contentliquid">
 			<div id="contentwrap">
 				<div id="content">
-				<INPUT TYPE="button" VALUE="Back" onClick="history.go(-1)"> <br><br>
-					<%
-					    CourseDAO pconnect = new CourseDAO();
-					ArrayList<BeanCourse> courses = pconnect.viewCourses();
-							%>
-					<table border="1">
-						<tr>
-							<th>course Id</th>
-							<th>course title</th>
-							<th>Subject Domain</th>
-							<th>Duration</th>
-							<th>Start Date</th>
-							<th>End Date</th>
-							<th>Cost</th>
-							<th>Course Requirements</th>
-							<th>Course Information Id </th>
-						</tr>
-					<%
-								for (BeanCourse c : courses) {
-									out.println("<tr><td> " + c.getCourse_id() + "</td>");
-									out.println("<td> " + c.getCourse_title() + "</td>");
-									out.println("<td> " + c.getSubject_domain() + "</td>");
-									out.println("<td> " + c.getCourse_duration() + "</td>");
-									out.println("<td> " + c.getCourse_start_date()+ "</td>");
-									out.println("<td> " + c.getCourse_end_date() + "</td>");
-									out.println("<td> " + c.getCourse_cost() + "</td>");
-									out.println("<td> " + c.getCourse_requirments() + "</td>");
-									out.println("<td> " + c.getCourse_info_id()+ "</td>");
-									%>
+	<%   Cookie ck[]=request.getCookies();  
+	String username=null;
+	 if (ck != null || ck.equals("")) {
+	for (Cookie cookie : ck) {
+		   if(cookie.getName().equals("username")){
+			  username=cookie.getValue();
+		   }
+	   } 
+	}
+	 
+	 if (username == null || username.equals("")){%>
+		 <form>
+				<INPUT TYPE="button" VALUE="Back" onClick="history.go(-1);"> 
+				<p>
+				Are you a New Learner?
+				</p>
 				
-			
-							<%}
+				<ul>
+						<li><a href='login.jsp'> <span>No</span></a></li>
+						<li><a href='register.jsp'><span>Yes</span></a></li>
+				</ul>
 				
-						%> 
-					</table>
-				<br><Br>
+				</form>
+		 <%}else { %>You cannot register while logged in! 
 				
-				
+				<%} %>
 				</div>
 			</div>
 		</div>

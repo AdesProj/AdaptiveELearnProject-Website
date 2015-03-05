@@ -24,46 +24,12 @@ public class ProviderDAO {
 		return conn;
 	}
 	
-	public void add(BeanLearner c) {
-		try {
-			String queryString = "INSERT INTO learners(learner_first_name, learner_other_names, learner_last_name, "
-					+ " learner_training_interests, specific_interests, course_choice_id, "
-					+ "description_of_interest, existing_training, current_expected_job) VALUES(?,?,?,?,?,?,?,?,?)";
-			connection = getConnection();
-			ptmt = connection.prepareStatement(queryString);
-			ptmt.setString(1, c.getL_Firstname());
-			ptmt.setString(2, c.getL_Othername());
-			ptmt.setString(3, c.getL_Lastname());
-			ptmt.setString(4, c.getL_TrainingInterest());
-			ptmt.setString(5, c.getSpecificInterest());
-			ptmt.setString(6, c.getCourseTitle());
-			ptmt.setString(7, c.getDescriptionOfInterest());
-			ptmt.setString(8, c.getExistingTraining());
-			ptmt.setString(9, c.getCurrentJob());
-			ptmt.executeUpdate();
-			System.out.println("Data Added Successfully");
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if (ptmt != null)
-					ptmt.close();
-				if (connection != null)
-					connection.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-
-		}
-
-	}
 	
-	public ArrayList<BeanLearner> viewLearnerByEmail(String emailAdd) {
-		ArrayList<BeanLearner> learner = null;
+	
+	public ArrayList<BeanProvider> viewProviderByEmail(String emailAdd) {
+		ArrayList<BeanProvider> provider = null;
 		try {
-			String queryString = "SELECT * FROM learners, login WHERE learner_email_address=email_address and email_address='"+emailAdd+"' ";
+			String queryString = "SELECT * FROM providers, login WHERE provider_email_address=email_address and email_address='"+emailAdd+"' ";
 			connection = getConnection();
 			ptmt = connection.prepareStatement(queryString);
 			//ptmt.setString(1, emailAdd);
@@ -72,21 +38,19 @@ public class ProviderDAO {
 			rs1 = ptmt.executeQuery();
  
 			
-			learner = new ArrayList<BeanLearner>();
+			provider = new ArrayList<BeanProvider>();
 			while (rs1.next()) {
-				BeanLearner temp = new BeanLearner();
-				temp.setLearnerId(rs1.getInt("learner_id"));
-				temp.setL_Firstname(rs1.getString("learner_first_name"));
-				temp.setL_Lastname(rs1.getString("learner_last_name"));
-				temp.setL_Othername(rs1.getString("learner_other_names"));
-				temp.setL_TrainingInterest(rs1.getString("learner_training_interests"));
-				temp.setSpecificInterest(rs1.getString("specific_interests"));
-				temp.setDescriptionOfInterest(rs1.getString("description_of_interest"));
-				temp.setExistingTraining(rs1.getString("existing_training"));
-				temp.setCurrentJob(rs1.getString("current_expected_job"));
-				temp.setEmailAddress(rs1.getString("learner_email_address"));
+				BeanProvider temp = new BeanProvider();
+				temp.setProvId(rs1.getInt("provider_id"));
+				temp.setP_Firstname(rs1.getString("provider_first_name"));
+				temp.setP_Lastname(rs1.getString("provider_last_name"));
+				temp.setP_Course_Taught(rs1.getString("provider_course_taught"));
+				temp.setP_Degree(rs1.getString("provider_degree"));
+				temp.setP_Office_Hours(rs1.getString("provider_office_hours"));
+				temp.setCourseId(rs1.getInt("course_id"));
+				temp.setEmailAddress(rs1.getString("provider_email_address"));
 				
-				learner.add(temp);
+				provider.add(temp);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -105,54 +69,8 @@ public class ProviderDAO {
 			}
 
 		}
-		return learner;
+		return provider;
 	}
 	
-	public ArrayList<BeanLearner> viewAllLearners() {
-		ArrayList<BeanLearner> learner = null;
-		try {
-			String queryString = "SELECT * FROM learners";
-			connection = getConnection();
-			ptmt = connection.prepareStatement(queryString);
-			connection = getConnection();
-			ptmt = connection.prepareStatement(queryString);
-			rs1 = ptmt.executeQuery();
- 
-			
-			learner = new ArrayList<BeanLearner>();
-			while (rs1.next()) {
-				BeanLearner temp = new BeanLearner();
-				temp.setLearnerId(rs1.getInt("learner_id"));
-				temp.setL_Firstname(rs1.getString("learner_first_name"));
-				temp.setL_Lastname(rs1.getString("learner_last_name"));
-				temp.setL_Othername(rs1.getString("learner_other_names"));
-				temp.setL_TrainingInterest(rs1.getString("learner_training_interests"));
-				temp.setSpecificInterest(rs1.getString("specific_interests"));
-				temp.setDescriptionOfInterest(rs1.getString("description_of_interest"));
-				temp.setExistingTraining(rs1.getString("existing_training"));
-				temp.setCurrentJob(rs1.getString("current_expected_job"));
-				temp.setEmailAddress(rs1.getString("learner_email_address"));
-				
-				learner.add(temp);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if (rs1 != null)
-					rs1.close();
-				if (ptmt != null)
-					ptmt.close();
-				if (connection != null)
-					connection.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 
-		}
-		return learner;
-	}
-	
 }

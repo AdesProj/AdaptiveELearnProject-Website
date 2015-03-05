@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*,adaptiveElearn.*"%>
-<%  LearnerDAO lconnect = new LearnerDAO();
+<%  ProviderDAO pconnect = new ProviderDAO();
 	LoginDAO loconnect = new LoginDAO();
-	CourseDAO cconnect = new CourseDAO(); %>
+	LearnerDAO lconnect = new LearnerDAO(); %>
     <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +32,7 @@
 						<li><a href='view-courses.jsp'><span>Courses</span></a></li>	
 						<li><a href='learner-account.jsp'><span>Learner Account</span></a></li>		
 						<li><a href='provider-account.jsp'><span>Provider Account</span></a></li>		
-						<li><a href='user-validation.html'><span>Register</span> </a></li>			
+						<li><a href='user-validation.jsp'><span>Register</span> </a></li>			
 						<li><a href='contact-us.html'><span>Contact Us</span></a></li>
 						<li><a href='blog.html'><span>Blog</span></a></li>
 					</ul>
@@ -61,56 +61,59 @@
 		 request.getRequestDispatcher("login.jsp").forward(request, response);  
 		 return;
 		 }
-	 if (!type.equals("learner") && !type.equals("provider") && type!=null){
-		 request.setAttribute("errorMessage", "Sorry providers cannot login to learner area!"); 
+	 if (!type.equals("provider") && type!=null){
+		 request.setAttribute("errorMessage", "Sorry learners cannot login to provider area!"); 
 		 request.getRequestDispatcher("login.jsp").forward(request, response);  
 		 return;
 	 }
-	 ArrayList<BeanCourse> cDet=cconnect.viewCoursesByLearnerEmail(username);
-	 //BeanUsers usr =null;
-	 //usr=loconnect.retrieveUserByUsername(username);
+	 ArrayList<BeanProvider> pDet=pconnect.viewProviderByEmail(username);
+	 ArrayList<BeanLearner> lDet=lconnect.viewAllLearners();
+
 	String name="";
-	 ArrayList<BeanLearner> lDet=lconnect.viewLearnerByEmail(username);
+
           %>
-          <%for (BeanLearner l : lDet) {
-          name=l.getL_Firstname();%>
-          Learner ID: <%=l.getLearnId() %> <br>
-          Full Name: <%=l.getL_Firstname()%> <%if(l.getL_Othername()==""){ out.println(l.getL_Othername());}%> <%=l.getL_Lastname()%> <br>
-          Email Address: <%=l.getEmailAddress() %> <br>
-          Training Interests: <%=l.getL_TrainingInterest() %> <br>
-          Specific Interests: <%=l.getSpecificInterest() %> <br>
-          Existing Training: <%if(l.getExistingTraining()=="Y"){out.println("Yes");}else out.println("No");%> <br>
-          Current Job: <%if(l.getCurrentJob()==""){ out.println(l.getCurrentJob());}else out.println("None");%> 
-        
-          
+          <%for (BeanProvider p : pDet) { 
+          name=p.getP_Firstname();%>
+          Personal Details:<br>
+          Provider ID: <%=p.getProvId() %> <br>
+          Full Name: <%=p.getP_Firstname()%> <%=p.getP_Lastname()%> <br>
+          Email Address: <%=p.getEmailAddress() %> <br>
+          Course Taught: <%=p.getP_Course_Taught()%> <br>
+          Qualified Subject Degree: <%=p.getP_Degree() %> <br>
+          Office Hours: <%=p.getP_Office_Hours() %> <br>
+         
+         
           
           
           <% } %>
-         <h3> Here is a list of your courses, <%=name%>!</h3>
+         <h2> Welcome to your provider profile, <%=name%>!</h2>
+         
          	<table border="1">
          		<tr>
-							<th>Course Id</th>
-							<th>course title</th>
-							<th>Subject Domain</th>
-							<th>Duration</th>
-							<th>Start Date</th>
-							<th>End Date</th>
-							<th>Cost</th>
-							<th>Course Requirements</th>
-							<th>Course Information Id </th>
+							<th>Learner ID</th>
+							<th>First Name</th>
+							<th>Other Name</th>
+							<th>Last Name</th>
+							<th>Email Address</th>
+							<th>Training Interests</th>
+							<th>Specific Interests</th>
+							<th>Existing Training</th>
+							<th>Current Job</th>
 						</tr>
 					
-								<%for (BeanCourse c : cDet) {%>
-									<tr><td> <%=c.getCourse_id()%></td>
-									<td> <%=c.getCourse_title()%> </td>
-									<td> <%=c.getSubject_domain()%> </td>
-									<td> <%=c.getCourse_duration()%> </td>
-									<td> <%=c.getCourse_start_date()%> </td>
-									<td> <%=c.getCourse_end_date()%> </td>
-									<td> <%=c.getCourse_cost()%> </td>
-									<td> <%if(c.getCourse_requirments()==""){ out.println(c.getCourse_requirments());}else out.println("None");%> </td>
-									<td> <%=c.getCourse_info_id()%> </td></tr> <%} %>
-				
+								<%for (BeanLearner l : lDet) {%>
+		<tr><td> <%=l.getLearnId() %> </td>
+         <td> <%=l.getL_Firstname()%> </td>
+        <td> <%if(l.getL_Othername()==""){ out.println(l.getL_Othername());}%> </td>
+         <td><%=l.getL_Lastname()%> </td>
+           <td><%=l.getEmailAddress() %> </td>
+         <td> <%=l.getL_TrainingInterest() %> </td>
+         <td> <%=l.getSpecificInterest() %> </td>
+         <td> <%if(l.getExistingTraining()=="Y"){out.println("Yes");}else out.println("No");%></td> 
+        <td> <%if(l.getCurrentJob()==""){ out.println(l.getCurrentJob());}else out.println("None");%></td></tr>
+        
+          
+          <%} %>
          	</table>
          	
 

@@ -60,8 +60,8 @@ public class LogoutProcess extends HttpServlet {
 	    		if(!username.equals("") || username!=null){
 				 ck[nmeArrNo] =new Cookie("username","");  
 				 ck[typArrNo] =new Cookie("usertype","");  
-			        ck[nmeArrNo].setMaxAge(-1);  
-			        ck[typArrNo].setMaxAge(-1);  
+			        ck[nmeArrNo].setMaxAge(0);  
+			        ck[typArrNo].setMaxAge(0);  
 			        response.addCookie(ck[nmeArrNo]); 
 			        response.addCookie(ck[typArrNo]); 
 			request.setAttribute("errorMessage", "You have logged out!");

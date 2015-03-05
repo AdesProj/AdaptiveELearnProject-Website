@@ -32,7 +32,7 @@
 						<li><a href='view-courses.jsp'><span>Courses</span></a></li>	
 						<li><a href='learner-account.jsp'><span>Learner Account</span></a></li>		
 						<li><a href='provider-account.jsp'><span>Provider Account</span></a></li>		
-						<li><a href='user-validation.html'><span>Register</span> </a></li>			
+						<li><a href='user-validation.jsp'><span>Register</span> </a></li>			
 						<li><a href='contact-us.html'><span>Contact Us</span></a></li>
 						<li><a href='blog.html'><span>Blog</span></a></li>
 					</ul>
@@ -61,7 +61,7 @@
 		 request.getRequestDispatcher("login.jsp").forward(request, response);  
 		 return;
 		 }
-	 if (!type.equals("learner") && !type.equals("provider") && type!=null){
+	 if (!type.equals("learner") && type!=null){
 		 request.setAttribute("errorMessage", "Sorry providers cannot login to learner area!"); 
 		 request.getRequestDispatcher("login.jsp").forward(request, response);  
 		 return;
