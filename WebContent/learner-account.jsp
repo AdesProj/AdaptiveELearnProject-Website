@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Learner Account || Adaptive E-Learn Systems</title>
+<title>Learner Account1 || Adaptive E-Learn Systems</title>
 <link rel="stylesheet" type="text/css" href="design.css" />
 </head>
 <body>
