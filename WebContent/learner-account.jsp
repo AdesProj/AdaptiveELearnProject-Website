@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Learner Account1 || Adaptive E-Learn Systems</title>
+<title>Learner Account || Adaptive E-Learn Systems</title>
 <link rel="stylesheet" type="text/css" href="design.css" />
 </head>
 <body>
@@ -108,7 +108,7 @@
 									<td> <%=c.getCourse_start_date()%> </td>
 									<td> <%=c.getCourse_end_date()%> </td>
 									<td> <%=c.getCourse_cost()%> </td>
-									<td> <%if(c.getCourse_requirments()==""){ out.println(c.getCourse_requirments());}else out.println("None");%> </td>
+									<td> <%if(c.getCourse_requirements()==""){ out.println(c.getCourse_requirements());}else out.println("None");%> </td>
 									<td> <%=c.getCourse_info_id()%> </td></tr> <%} %>
 				
          	</table>
