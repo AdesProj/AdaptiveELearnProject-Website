@@ -40,6 +40,7 @@ public class CourseDAO {
 				temp.setCourse_duration(rs1.getString("course_duration"));
 				temp.setCourse_start_date(rs1.getString("course_start_date"));
 				temp.setCourse_end_date(rs1.getString("course_end_date"));
+				temp.setCourse_requirements(rs1.getString("course_requirments"));
 				temp.setCourse_cost(rs1.getDouble("course_cost"));
 				temp.setCourse_info_id(rs1.getInt("course_info_id"));
 				courses.add(temp);

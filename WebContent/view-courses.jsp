@@ -65,9 +65,13 @@
 									out.println("<td> " + c.getCourse_start_date()+ "</td>");
 									out.println("<td> " + c.getCourse_end_date() + "</td>");
 									out.println("<td> " + c.getCourse_cost() + "</td>");
-									out.println("<td> " + c.getCourse_requirments() + "</td>");
-									out.println("<td> " + c.getCourse_info_id()+ "</td>");
-									%>
+									out.println("<td> " + c.getCourse_requirements() + "</td>");
+									int cId = c.getCourse_info_id(); %>
+									<form action="course-information.jsp" method="get">
+									<input type="hidden" name="course_info_id" value="<%=c.getCourse_info_id()%>">
+									<td><input type="submit" value="<%=cId%>"></td>
+									</form>
+									
 				
 			
 							<%}

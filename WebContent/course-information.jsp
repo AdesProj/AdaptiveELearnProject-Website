@@ -42,31 +42,34 @@
 				<INPUT TYPE="button" VALUE="Back" onClick="history.go(-1)"> <br><br>
 					<%
 					    CourseDAO pconnect = new CourseDAO();
-					ArrayList<BeanCourse> courses = pconnect.viewCourses();
+					int infoId = Integer.parseInt(request.getParameter("course_info_id"));
+					ArrayList<BeanCourseInfo> course_info = pconnect.getCourseInfo(infoId);
 							%>
 					<table border="1">
 						<tr>
 							<th>Course Information Id</th>
-							<th>course title</th>
-							<th>Subject Domain</th>
-							<th>Duration</th>
-							<th>Start Date</th>
-							<th>End Date</th>
-							<th>Cost</th>
-							<th>Course Requirements</th>
-							<th>Course Information</th>
+							<th>Negotiable Course Duration</th>
+							<th>Course Delivery Method</th>
+							<th>Course Placement_option</th>
+							<th>Course Content Summary</th>
+							<th>Course Accreditation Level</th>
+							<th>Course Assessment Method</th>
+							<th>Cert Prog Route</th>
+							<th>Course Objectives</th>
+							<th>Course Benefits</th>
 						</tr>
 					<%
-								for (BeanCourse c : courses) {
-									out.println("<tr><td> " + c.getCourse_id() + "</td>");
-									out.println("<td> " + c.getCourse_title() + "</td>");
-									out.println("<td> " + c.getSubject_domain() + "</td>");
-									out.println("<td> " + c.getCourse_duration() + "</td>");
-									out.println("<td> " + c.getCourse_start_date()+ "</td>");
-									out.println("<td> " + c.getCourse_end_date() + "</td>");
-									out.println("<td> " + c.getCourse_cost() + "</td>");
-									out.println("<td> " + c.getCourse_requirments() + "</td>");
-									out.println("<td> " + c.getCourse_info_id()+ "</td>");
+								for (BeanCourseInfo t : course_info) {
+									out.println("<tr><td> " + t.geCourse_info_id() + "</td>");
+									out.println("<td> " + t.getNegotiable_course_duration()+ "</td>");
+									out.println("<td> " + t.getCourse_delivery_method() + "</td>");
+									out.println("<td> " + t.getCourse_placement_option() + "</td>");
+									out.println("<td> " + t.getCourse_content_summary() + "</td>");
+									out.println("<td> " + t.getCourse_accreditation_level() + "</td>");
+									out.println("<td> " + t.getcourse_assessment_method() + "</td>");
+									out.println("<td> " + t.getCert_prog_route() + "</td>");
+									out.println("<td> " + t.getCourse_objectives() + "</td>");
+									out.println("<td> " + t.getCourse_benefits() + "</td>");
 									%>
 				
 			

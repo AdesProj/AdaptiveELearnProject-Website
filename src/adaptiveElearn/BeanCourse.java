@@ -10,27 +10,27 @@ public class BeanCourse implements Serializable  {
 	private String course_start_date;
 	private String course_end_date;
 	private Double course_cost;
-	private String course_requirments;
+	private String course_requirements;
 	private int course_info_id;
 	
 	public  BeanCourse () {}
 	
 	public  BeanCourse (String c_title, String sub_domain,
 			String c_duration, String c_start_date, String c_end_date,
-			Double c_cost, String c_requirments, int c_info_id) { 
+			Double c_cost, String c_requirements, int c_info_id) { 
 		course_title = c_title;
 		subject_domain = sub_domain;
 		course_duration = c_duration;
 		course_start_date = c_start_date;
 		course_end_date = c_end_date;
 		course_cost = c_cost;
-		course_requirments = c_requirments;
+		course_requirements = c_requirements;
 		course_info_id = c_info_id;	
 	}
 	
 	public  BeanCourse (int c_id, String c_title, String sub_domain,
 			String c_duration, String c_start_date, String c_end_date,
-			Double c_cost, String c_requirments, int c_info_id) { 
+			Double c_cost, String c_requirements, int c_info_id) { 
 		course_id = c_id;
 		course_title = c_title;
 		subject_domain = sub_domain;
@@ -38,7 +38,7 @@ public class BeanCourse implements Serializable  {
 		course_start_date = c_start_date;
 		course_end_date = c_end_date;
 		course_cost = c_cost;
-		course_requirments = c_requirments;
+		course_requirements = c_requirements;
 		course_info_id = c_info_id;
 		
 	}
@@ -95,11 +95,11 @@ public class BeanCourse implements Serializable  {
     	this.course_cost = course_cost;
   }
 
-	public String getCourse_requirments(){
-    	return course_requirments;
+	public String getCourse_requirements(){
+    	return course_requirements;
     }
-	public void setCourse_requirments(String course_requirments){
-    	this.course_requirments = course_requirments;
+	public void setCourse_requirements(String course_requirements){
+    	this.course_requirements = course_requirements;
   }
 
 	
@@ -117,7 +117,7 @@ public class BeanCourse implements Serializable  {
 				+ ", course_duration=" + course_duration
 				+ ", course_start_date=" + course_start_date
 				+ ", course_end_date=" + course_end_date + ", course_cost="
-				+ course_cost + ", course_requirments=" + course_requirments
+				+ course_cost + ", course_requirements=" + course_requirements
 				+ ", course_info_id=" + course_info_id + "]";
 	}
 
