@@ -45,13 +45,11 @@
 					<form action="add-learner" method="post">
 						<p>
 							<br> First Name <br> <input type="text"
-								name="firstname" value="" size="40" aria-required="true"
-								aria-invalid="false" required>
+								name="firstname" value="" size="40" required>
 						</p>
 						<p>
 							<br> Other Name <br> <input type="text"
-								name="othername" value="" size="40" aria-required="false"
-								aria-invalid="false">
+								name="othername" value="" size="40" required>
 						</p>
 						<p>
 							<br> Last Name <br> <input type="text"
@@ -60,23 +58,21 @@
 						</p>
 							<p>
 							<br> E-mail Address  <br> <input type="email"
-								name="learner-email" value="" size="40" aria-required="true"
-								aria-invalid="false" required>
+								name="learner-email" value="" size="40" required>
 						</p>
 						<p>
 							<br> Password  <br> <input type="password"
-								name="learner-pass" value="" size="40" aria-required="true"
-								aria-invalid="false" required>
+								name="learner-pass" value="" size="40" required>
 						</p>
 						<p>
 							<br> Learner Training Interests <br> <input
 								type="text" name="learner-training-interests" value="" size="40"
-								aria-required="true" aria-invalid="false" required>
+								 required>
 						</p>
 						<p>
 							<br> Specific Interest <br> <input
 								type="text" name="specific-interest" value="" size="40"
-								aria-required="true" aria-invalid="false" required>
+								 required>
 						</p>
 
 						<p>
@@ -121,7 +117,7 @@
 						<p>
 							<br> Current Expected Job <br>
 							<textarea name="current-expected-job" value="" size="40"
-								cols="40" rows="10" aria-required="true" aria-invalid="false" required>
+								cols="40" rows="10"  required>
 							</textarea>
 						</p>
 						<br><input type="Submit" value="Submit">
