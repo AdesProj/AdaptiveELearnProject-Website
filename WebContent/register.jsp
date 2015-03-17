@@ -49,7 +49,7 @@
 						</p>
 						<p>
 							<br> Other Name <br> <input type="text"
-								name="othername" value="" size="40" required>
+								name="othername" value="" size="40" >
 						</p>
 						<p>
 							<br> Last Name <br> <input type="text"

@@ -22,14 +22,14 @@
 			<div id="navigation">
 				<div id="tabs24">
 					<ul>
-						<li><a href='index.jsp' > <span>Home</span></a></li>
+						<li><a href='index.jsp'> <span>Home</span></a></li>
 						<li><a href='about-us.html'><span>About Us</span></a></li>
 						<li><a href='sample-training-video.html'><span>Sample Training Video</span></a></li>										
 						<li><a href='product-services.html'><span>Adaptive-Elearn Product and Services</span></a></li>
 						<li><a href='view-courses.jsp'><span>Courses</span></a></li>	
 						<li><a href='learner-account.jsp'><span>Learner Account</span></a></li>		
 						<li><a href='provider-account.jsp'><span>Provider Account</span></a></li>		
-						<li><a href='user-validation.html'><span>Register</span> </a></li>			
+						<li><a href='user-validation.jsp'><span>Register</span> </a></li>			
 						<li><a href='contact-us.html'><span>Contact Us</span></a></li>
 						<li><a href='blog.html'><span>Blog</span></a></li>
 					</ul>
